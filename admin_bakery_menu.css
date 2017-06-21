@@ -1,0 +1,139 @@
+body {
+	font-family: "Lucida Sans", sans-serif;
+	margin: 0;
+}
+
+.top {
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+}
+
+.text {
+	font-size: 10px;
+	text-align: right;
+	margin-top: 30px;
+	margin-right: 20px;
+}
+
+.log {
+	overflow: auto;
+	margin-right: 20px;
+	text-align: right;
+}
+
+.logout {
+	cursor: pointer;
+	float: right;
+	padding: 8px 20px;
+	margin: 5px;
+	font-weight: bold;
+	background-color: #6D9475;
+	border: none;
+	border-radius: 4px;
+}
+
+.logout a {
+	text-decoration: none;
+	color: white;
+}
+
+.bar {
+	margin-top: 38px;
+	width: 100%;
+}
+
+ul {
+	cursor: pointer;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #81D592;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	width: 120px;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 15px 18px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+li a:hover {
+	background-color: #6D9475;
+}
+
+li a:active {
+	background-color: #4B8B58;
+}
+
+.menu {
+	background-color: #4B8B58;
+}
+
+.bottom {
+	text-align: center;
+	padding-top: 230px;
+	margin: 0 auto;
+	width: 1300px;
+}
+
+.bottom .block {
+	margin: 12px;
+	width: 400px;
+/*	height: 400px;*/
+	/*padding: 5px;*/
+	display: inline-block;
+}
+
+.option {
+	background-color: #4B8B58;
+	color: white;
+	padding: 8px 20px;
+	font-weight: bold;
+}
+
+fieldset {
+	background-color: #81D592;
+	border: none;
+
+}
+
+tr {
+	color: white;
+	font-weight: bold;
+}
+
+/*input[type=submit]*/ 
+.submitadd, .submitedit, .submitdelete, .savechanges {
+	cursor: pointer;
+	border-radius: 4px;
+	background-color: #6D9475;
+	font-weight: bold;
+	border: none;
+	color: white;
+	padding: 8px 20px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+input[type=file] {
+	margin-bottom: 5px;
+}
+
+.error {
+	font-size: 10px;
+	font-style: italic; 
+	color: gray;
+}
+
+.error::before {
+	content: "*";
+}

@@ -1,0 +1,129 @@
+body {
+	background-color: white;
+	color: white;
+	font-family: "Lucida Sans", sans-serif;
+	font-size: 15px; 
+}
+
+* {
+	box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    div {
+        width: 100%;
+    }
+}
+/*
+h1 {
+	color: blue;
+	text-align: center;
+}*/
+
+div {
+	padding: 10px;
+}
+
+hr {
+    border-top: 1px dashed;
+}
+
+#main {
+	background-color: black;
+	width: 310px;
+	margin: 0 auto;
+	border-radius: 4px;
+	/*display: none;*/
+}
+
+#main2 {
+	background-color: black;
+	width: 310px;
+	margin: 0 auto;
+	border-radius: 4px;
+	display: none;
+}
+
+.container {
+	margin: 0 auto;
+	width: 310px;
+	text-align: center;
+}
+
+#signup, #signin {
+	cursor: pointer;
+	width: 130px;
+	text-align: center;
+	color: black;
+	display: inline-block;
+	margin: 0 auto;	
+	border-radius: 3px;
+}
+
+#signup {
+		background-color: lightblue;
+		font-weight: bold;
+}
+
+#signin {
+		background-color: lightgray;
+		font-weight: bold;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: black;
+    background-color: lightgray;
+}
+
+#signinbutton {
+	width: 100%;
+	background-color: lightgray;
+
+}
+
+input[type=submit] {
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: lightblue;
+	font-weight: bold;
+}
+
+.error {
+	font-size: 10px;
+	font-style: italic; 
+	color: lightblue;
+}
+
+.error::before {
+	content: "*";
+}
+
+
+#policy {
+	position: relative;
+	left: -14px;
+}
+
+label[for=agree] {
+	position: absolute;
+	top: 33px;
+	left: 14px;
+}
+
+a {
+	color: lightblue;
+}
+
+a:hover {
+	color: gray;
+}
+
+/*.login_success, .login_fail, .record {
+	display: none;
+}*/

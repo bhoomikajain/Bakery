@@ -1,0 +1,24 @@
+USER: u_id, r_id, name, email, password, mobile, address
+CAKE: item_id, item_name, price, qty_avail, contains_egg
+ORDER: order_id, qty,  date_of_purchase, payment_mode
+FLAVOUR:
+SIZE
+ROLE: r_id, r_name
+
+HOME ABOUT MENU GALLERY CONTACT	if logged in(WISHLIST CART)	LOG IN / REGISTER
+
+session_destroy on logout
+
+CAKE
+cake id pk
+cake name reqd
+weight reqd
+price reqd
+image
+
+INSERT INTO Address (uid, fname, lname, mobileno, houseno, street, pincode, city, state, country) VALUES ("2", "Tushar", "Luhadiya", "8890964832", "B-29", "Laxmi Narayan Puri", "302003", "Jaipur", "Rajasthan", "India")
+
+$query=mysqli_query($conn, "DELETE FROM Address WHERE uid=$uid");
+					if ($query) {
+						echo "<script>window.location='user_acc_address.php'</script>";
+					}
