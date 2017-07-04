@@ -14,10 +14,12 @@
 
 <body>
 
+	<a href="#go_up"><div class="up"><h2> ^ </h2></div></a>
+
 	<div class="top">
 		
 		<div class="log">
-			<h2> Hello <?php $uname=$_SESSION['uname']; echo $uname; ?>! </h2> 
+			<h3> Hello <?php $uname=$_SESSION['uname']; echo $uname; ?>! </h3> 
 			<button class="logout"><a href="logout.php"> LOGOUT </a></button>
 			<br>	
 		</div>
@@ -43,7 +45,7 @@
 	</div>
 
 	<div class="bottom">
-		<h1> Pick your favourite cakes! </h1>
+		<h1 id="go_up"> Pick your favourite cakes! </h1>
 
 	<?php
 
@@ -61,7 +63,7 @@
 				echo "<b>".$cake."</b>"; 
 				echo "<br>";
 
-	$cake_wp="SELECT weight, price FROM Cake where name='$cake'";
+	$cake_wp="SELECT weight, price FROM Cake where name='$cake' ORDER BY weight";
 	$cake_wp_result=mysqli_query($conn, $cake_wp);
 				while ($cake_wp_row=mysqli_fetch_assoc($cake_wp_result)) {
 					$weight=$cake_wp_row['weight'];
@@ -77,78 +79,6 @@
 	}
 	
 	?>
-
-		<div class="container">
-			<img src="Oreo Cheesecake.jpg" alt="Oreo Cheesecake" class="image">
-			<div class="cake">
-				Oreo Cheesecake <br>
-				100 pounds: Rs. 350
-			</div>
-		</div>
-
-		<div class="container">
-			<img src="Red Velvet Cake.jpg" alt="Red Velvet Cake" class="image">
-			<div class="cake">
-				Red Velvet Cake <br>
-				100 pounds: Rs. 400
-			</div>
-		</div>
-
-		<div class="container">
-			<img src="CHOCOLATE-TRUFFLE-CAKE.jpg" alt="Chocolate Truffle Cake" class="image">
-			<div class="cake">
-				Chocolate Truffle Cake <br>
-				100 pounds: Rs. 300
-			</div>
-		</div>
-
-		<div class="container">
-			<img src="Chocolate Chip Cake.jpg" alt="Chocolate Chip Cake" class="image">
-			<div class="cake">
-				Chocolate Chip Cake <br>
-				100 pounds: Rs. 300
-			</div>
-		</div>
-
-		<div class="container">
-			<img src="Mixed Fruit Cake.jpg" alt="Mixed Fruit Cake" class="image">
-			<div class="cake">
-				Mixed Fruit Cake <br>
-				100 pounds: Rs. 350
-			</div>
-		</div>
-
-		<div class="container">
-			<img src="Chocolate Mousse Cake.jpg" alt="Chocolate Mousse Cake" class="image">
-			<div class="cake">
-				Chocolate Mousse Cake <br>
-				100 pounds: Rs. 300
-			</div>
-		</div>
-
-		<div class="container">
-			<img src="Strawberry Cake.jpg" alt="Strawberry Cake" class="image">
-			<div class="cake">
-				Strawberry Cake <br>
-				100 pounds: Rs. 250
-			</div>
-		</div>
-
-		<div class="container">
-			<img src="Black Forest Cake.jpg" alt="Black Forest Cake" class="image">
-			<div class="cake">
-				Black Forest Cake <br>
-				100 pounds: Rs. 300
-			</div>
-		</div>
-
-		<div class="container">
-			<img src="Pineapple Cake.jpg" alt="Pineapple Cake" class="image">
-			<div class="cake">
-				Pineapple Cake <br>
-				100 pounds: Rs. 250
-			</div>
-		</div>
 
 	</div>
 	

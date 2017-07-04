@@ -18,14 +18,14 @@ $(document).ready(function(){
 		// }
 	});
 
-	$(".submitedit").click(function(){
-		$(".editcake_text").prop({disabled: false});
-		$(".editweight_text").prop({disabled: false});
-		$(".editprice_text").prop({disabled: false});
-		$("#fileToUpload").prop({disabled: false});
-		$("#submitimage").prop({disabled: false});
-		$(".savechanges").prop({disabled: false});
-	});
+	// $(".submitedit").click(function(){
+	// 	$(".editcake_text").prop({disabled: false});
+	// 	$(".editweight_text").prop({disabled: false});
+	// 	$(".editprice_text").prop({disabled: false});
+	// 	$("#fileToUpload").prop({disabled: false});
+	// 	$("#submitimage").prop({disabled: false});
+	// 	$(".savechanges").prop({disabled: false});
+	// });
 
 });
 })(jQuery);

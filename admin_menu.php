@@ -11,64 +11,6 @@
 	<script src="jquery.validate.js"></script>
 	<script type="text/javascript" src="admin_bakeryjs_menu.js"></script>
 
-<script>
-$(document).ready(function() {
-	// $("#editcake").on('change', function(event) {
-	    // var cake=$(this).val();
-	// });
-	    // $("#edit_form").submit(function(){
-	    	// alert("acb");
-	    	// $.post("admin_menu_edit.php",
-      //      {
-      //        cake1: cake,
-
-      //      });  
-    //        event.preventDefault() ;
-
-    //        var $form = $( this ),
-    // term = cake,
-    // url = $form.attr( "action" );
- 
-  // Send the data using post
-  // var posting = $.post( url, { s: term } );
- 
-  // Put the results in a div
-  // posting.done(function( data ) {
-  // 	alert(term);
-    // var content = $( data ).find( "#content" );
-    // $( "#result" ).empty().append( content );
-  // });
-	 //    $.ajax({
-  //   		url: "admin_menu_edit.php",
-  //   		type: "POST",
-
-  //   		data: { cake1: cake},
-  //   		// success: function (result) {
-  //     //       	alert('success');
-        	
-		// });
-	// });
-	// });
-// 	function getWeight(val) {
-// 		alert("acdv");
-// 	$.ajax({
-// 	type: "POST",
-// 	url: "admin_menu_edit.php",
-// 	data: 'cake_name='+val,
-// 	success: function(data){
-// 		$("#editweight").html(data);
-// 	}
-// 	});
-// }
-
-
-	// $("#example2").on('change', function () {
-	//     //alert($(this).val());
-	//     alert($(this).find('option:selected').attr('id'));
-	// });
-});
-</script>
-
 </head>
 
 <body>
@@ -76,7 +18,7 @@ $(document).ready(function() {
 	<div class="top">
 		
 		<div class="log">
-			<h2> Hello Admin! </h2> 
+			<h3> Hello Admin! </h3> 
 			<button class="logout"><a href="index.php"> LOGOUT </a></button>
 			<br>	
 		</div>
@@ -84,9 +26,9 @@ $(document).ready(function() {
 		<div class="bar">
 			<ul>
 				<li><a class="home" href="admin_index.php"> HOME </a></li>
-				<li><a class="menu" href="admin_menu.php"> MODIFY MENU </a></li>
-				<li><a class="about" href="admin_about.php"> ABOUT US </a></li>
-				<li><a class="contact" href="admin_contact.php"> CONTACT US </a></li>
+				<li><a class="menu" href="admin_menu.php"> MENU </a></li>
+				<li><a class="about" href="admin_about.php"> ABOUT </a></li>
+				<li><a class="contact" href="admin_contact.php"> CONTACT </a></li>
 			</ul>
 		</div>
 
@@ -118,7 +60,6 @@ $(document).ready(function() {
 						<td> Select an image to upload </td>
 						<td>
 							<input type="file" name="image" id="image">
-   							<!-- <a href = "upload.php"><input type="submit" value="Upload Image" name="submitimage"></a> -->
    						</td>
 					</tr>
 					</div>
@@ -132,48 +73,34 @@ $(document).ready(function() {
 			<fieldset>		 
 				<legend>
 					<div class="option"> EDIT </div>
-				</legend>	
-				<!-- <form name="edit" id="edit" method="post"> -->
+				</legend>
 
 				<?php
 							
 					$name_query="SELECT DISTINCT name FROM Cake";
 					$name_result=mysqli_query($conn, $name_query);
 
-				echo "<table>";
+
+					$arr=array();
+					$_SESSION['arr']=array();
+
+
+				echo "<form name='edit_form' id='edit_form' action='admin_menu_edit.php' method='POST'>";
+
+					echo "<table>";
 
 					echo "<tr>";
 						echo "<td> Cake </td>";
+						
 						echo "<td>";
-
-						echo "<form name='edit_form' id='edit_form' action='admin_menu_edit.php' method='POST'>";
-							
-							// echo "<select name='editcake' id='editcake' onChange='getWeight(this.value)'>";
-							// echo "<option value=''>Choose Cake</option>";
-
-							// $name_arr=array();
-							// $_SESSION['name_arr']=array();
-
-							// while ($name_row=mysqli_fetch_array($name_result)) {
-							// 	// echo "<select name='editcake' id='editcake'>";
-							// 	$name_arr[]=$name_row['name'];
-							// 	$_SESSION['name_arr']=$name_arr;
-
-							// 	echo "<option value='" . $name_row['name'] ."' id='" . $name_row['name'] ."'>" . $name_row['name'] . "</option>";
-							// 	// echo "</select>";
-							// }	
-							// echo "</select>";
 
 						echo "<select name='editcake' id='editcake'>";
 							echo "<option value=''>Choose Cake</option>";
 
-							// $name_arr=array();
-							// $_SESSION['name_arr']=array();
-
 							while ($name_row=mysqli_fetch_array($name_result)) {
-								// echo "<select name='editcake' id='editcake'>";
+								
 								$name_arr=$name_row['name'];
-								// $_SESSION['name_arr']=$name_arr;
+								$_SESSION['name_arr']=$name_arr;
 
 								echo "<optgroup value='" . $name_row['name'] ."' id='" . $name_row['name'] ."' label='" . $name_row['name'] . "'>";
 
@@ -181,64 +108,64 @@ $(document).ready(function() {
 								$weight_result=mysqli_query($conn, $weight_query);
 
 								while ($weight_row=mysqli_fetch_array($weight_result)) {
-								echo "<option value'" . $weight_row['weight'] ."'>" . $weight_row['weight'] . " lbs</option>";
-							}
+
+									$weight_arr=$weight_row['weight'];
+
+									$arr[$name_arr][]=$weight_arr;
+									$_SESSION['arr']=$arr;
+
+									echo "<option name='edit[$name_arr]' value='" . $name_arr . ": " . $weight_row['weight'] ."'>" . $weight_row['weight'] . " lbs</option>";
+								}
 
 								echo "</optgroup>";
 							}	
-							echo "</select>";
+						echo "</select>";
 
-							echo "<input type='submit' name='edit_submit' class='edit_submit' value='x'>";
-						echo "</form>";
-
+						// print_r($arr);
+						// print_r($_SESSION['arr']);
 
 						echo "</td>";
 					echo "</tr>";
+						
+					echo "</table>";
 
-					echo "<tr>";
-						echo "<td> Weight </td>";
-						echo "<td>";
-							echo "<select name='editweight' id='editweight'>";
-							echo "<option value=''>Choose Weight</option>";
-							while ($weight_row=mysqli_fetch_array($weight_result)) {
-								echo "<option value'" . $weight_row['weight'] ."'>" . $weight_row['weight'] . "</option>";
-							}	
-							echo "</select>";
-						echo "</td>";
-					echo "</tr>";
-
-				echo "</table>";
+					echo "<input type='submit' name='submitedit' class='submitedit' value='EDIT'> ";
+				echo "</form>";
+						
 				?>
 				
-				<input type="submit" name="submitedit" class="submitedit" value="EDIT"> 
+				<form name="save" id="save" method="POST" enctype="multipart/form-data" action="admin_menu_save.php">
 
-				<!-- </form> -->
-
-				<form name="save" id="save" method="post" action="admin_menu_save.php">
+				<?php 
+					$edit_name = $edit_weight = $edit_price = "";
+					$edit_name=$_SESSION['edit_name'];
+					$edit_weight=$_SESSION['edit_weight'];
+					$edit_price=$_SESSION['edit_price'];
+				?>
 
 				<table>
 					<tr>
 						<td> Cake Name </td>
-						<td><input type="field" name="editcake_text" class="editcake_text" disabled></td>
+						<td><input type="field" name="editcake_text" class="editcake_text" value="<?php echo $edit_name; ?>"></td>
 					</tr>
 					<tr>
 						<td> Weight </td>
-						<td><input type="field" name="editweight_text" class="editweight_text" placeholder="Pounds" disabled></td>
+						<td><input type="field" name="editweight_text" class="editweight_text"" value="<?php echo $edit_weight; ?>" placeholder="Pounds"></td>
 					</tr>
 					<tr>
 						<td> Price </td>
-						<td><input type="field" name="editprice_text" class="editprice_text" placeholder="Rs." disabled></td>
+						<td><input type="field" name="editprice_text" class="editprice_text" value="<?php echo $edit_price; ?>" placeholder="Rs."></td>
 					</tr>
-					<div class="image">
+					<div class="uploadimage">
 					<tr>
 						<td> Select an image to upload </td>
 						<td>
-							<input type="file" value="Choose Image" id="fileToUpload" name="fileToUpload">
-   							<!-- <input type="submit" value="Upload Image" id="submitimage" name="submitimage" disabled> -->
+							<input type="file" name="editimage" id="editimage">
    						</td>
 					</tr>
+					</div>
 				</table>
-				<input type="submit" class="savechanges" value="SAVE CHANGES" disabled>
+				<input type="submit" class="savechanges" value="SAVE CHANGES">
 				</form>
 			</fieldset>
 		</div>
@@ -248,52 +175,62 @@ $(document).ready(function() {
 				<legend>
 					<div class="option"> DELETE </div>
 				</legend>	
-				<form name="delete" id="delete" method="post" action="admin_menu_delete.php">
+				
 				<?php
 							
 					$del_name_query="SELECT DISTINCT name FROM Cake";
 					$del_name_result=mysqli_query($conn, $del_name_query);
 
-				echo "<table>";
+					$arr=array();
+					// $_SESSION['arr']=array();
+
+
+				echo "<form name='del_form' id='del_form' action='admin_menu_delete.php' method='POST'>";
+
+					echo "<table>";
 
 					echo "<tr>";
-						echo "<td> Cake Name </td>";
+						echo "<td> Cake </td>";
+						
 						echo "<td>";
-							echo "<select name='delcake' id='delcake'>";
+
+						echo "<select name='delcake' id='delcake'>";
+							echo "<option value=''>Choose Cake</option>";
+
 							while ($del_name_row=mysqli_fetch_array($del_name_result)) {
-								echo "<option value'" . $del_name_row['name'] ."'>" . $del_name_row['name'] . "</option>";
+								
+								$name_arr=$del_name_row['name'];
+								// $_SESSION['name_arr']=$name_arr;
+
+								echo "<optgroup value='" . $del_name_row['name'] ."' id='" . $del_name_row['name'] ."' label='" . $del_name_row['name'] . "'>";
+
+								$del_weight_query="SELECT weight FROM Cake WHERE name='$name_arr'";
+								$del_weight_result=mysqli_query($conn, $del_weight_query);
+
+								while ($del_weight_row=mysqli_fetch_array($del_weight_result)) {
+
+									$weight_arr=$weight_row['weight'];
+
+									$arr[$name_arr][]=$weight_arr;
+									// $_SESSION['arr']=$arr;
+
+									echo "<option name='delete[$name_arr]' value='" . $name_arr . ": " . $del_weight_row['weight'] ."'>" . $del_weight_row['weight'] . " lbs</option>";
+								}
+
+								echo "</optgroup>";
 							}	
-							echo "</select>";
+						echo "</select>";
+
 						echo "</td>";
 					echo "</tr>";
+						
+					echo "</table>";
 
-					$delcake = "";
-					
-					if ($_SERVER["REQUEST_METHOD"] == "POST") {
-						if (isset($_POST['delcake'])) {
-							$delcake=$_POST['delcake'];
-						}
-					}
-					
-					$del_weight_query="SELECT weight FROM Cake WHERE name='$delcake'";
-					$del_weight_result=mysqli_query($conn, $del_weight_query);
-
-					echo "<tr>";
-						echo "<td> Weight </td>";
-						echo "<td>";
-							echo "<select name='delweight'>";
-							while ($del_weight_row=mysqli_fetch_array($del_weight_result)) {
-								echo "<option value'" . $del_weight_row['weight'] ."'>" . $del_weight_row['weight'] . "</option>";
-							}	
-							echo "</select>";
-						echo "</td>";
-					echo "</tr>";
-
-				echo "</table>";
+					echo "<input type='submit' name='submitdelete' class='submitdelete' value='DELETE'> ";
+				echo "</form>";
+						
 				?>
 				
-				<input type="submit" class="submitdelete" value="DELETE"> 
-				</form>
 			</fieldset>
 		</div>
 		

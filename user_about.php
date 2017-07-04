@@ -5,11 +5,11 @@
 <html>
 <head>
 	<title> ONLINE BAKERY </title>
-	<link rel="stylesheet" href="user_bakery.css">
+	<link rel="stylesheet" href="user_bakery_about.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="jquery-3.2.1.min.js"></script>
 	<script src="jquery.validate.js"></script>
-	<script type="text/javascript" src="bakeryjs.js"></script>
+	<script type="text/javascript" src="user_bakeryjs_menu.js"></script>
 </head>
 
 <body>
@@ -40,20 +40,14 @@
 			</ul>
 		</div>
 
-	</div>
-	
-	<div class="bottom">
-
-		<div class="container">
-			<!-- <div class="left"><b> < </b></div>
-			<div class="right"><b> > </b></div> -->
-			<div class="img_text">
-				<h1> Choose from our wide variety of eggless-cakes! </h1>
-				<a href="menu.php"><button class="shop"> SHOP NOW >> </button></a>
-			</div>
+		<div class="bottom">
+			<h2>About Us</h2>
+			<p>This is an online cake store which has been satisfying the sweet tooth of all our customers with its delicious cakes since 2010. We offer the widest range of eggless-cakes, Oreo Cheesecake and Red Velvet Cake being our specialities.</p>
 		</div>
 
 	</div>
 
+
+	
 </body>
 </html>

@@ -27,6 +27,11 @@
 		</div>
 
 	</div>
+
+	<div class="bottom">
+		<h2>About Us</h2>
+		<p>This is an online cake store which has been satisfying the sweet tooth of all our customers with its delicious cakes since 2010. We offer the widest range of eggless-cakes, Oreo Cheesecake and Red Velvet Cake being our specialities.</p>
+	</div>
 	
 </body>
 </html>

@@ -17,7 +17,7 @@
 	<div class="top">
 		
 		<div class="log">
-			<h2> Hello <?php $uname=$_SESSION['uname']; echo $uname; ?>!</h2> 
+			<h3> Hello <?php $uname=$_SESSION['uname']; echo $uname; ?>!</h3> 
 			<button class="logout"><a href="logout.php"> LOGOUT </a></button>
 			<br>	
 		</div>

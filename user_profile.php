@@ -17,6 +17,14 @@
 
 	if ($save_query) {
 		echo "<script>alert('Your profile has been updated!')</script>";
+
+		$user_query=mysqli_query($conn, "SELECT uname FROM Users WHERE uid='$uid'");
+		$user_res=mysqli_fetch_array($user_query);
+
+		$uname=$user_res['uname'];
+
+		$_SESSION['uname']=$uname;
+
 		echo "<script>window.location='user_account.php'</script>";
 	}
 

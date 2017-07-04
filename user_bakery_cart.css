@@ -10,13 +10,13 @@ body {
 	z-index: 1;
 }
 
-.text {
+/*.text {
 	font-size: 10px;
 	text-align: right;
 	margin-top: 25px;
 	margin-right: 20px;
 	font-weight: bold;
-}
+}*/
 
 .log {
 	margin-right: 20px;
@@ -27,8 +27,8 @@ body {
 .logout {
 	cursor: pointer;
 	float: right;
-	padding: 8px 20px;
-	margin: 5px;
+	padding: 7px 15px;
+	/*margin: 5px;*/
 	font-weight: bold;
 	background-color: #6D9475;
 	border: none;
@@ -41,7 +41,7 @@ body {
 }
 
 .bar {
-	margin-top: 17px;
+	margin-top: 12px;
 	width: 100%;
 }
 
@@ -88,7 +88,7 @@ li a:active {
 	/*position: relative;*/
 	/*display: block;*/
 	margin-left: 25px;
-	padding-top: 180px;
+	padding-top: 160px;
 	/*margin: 0 auto;*/
 	width: 50%;
 }

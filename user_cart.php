@@ -18,7 +18,7 @@
 	<div class="top">
 		
 		<div class="log">
-			<h2> Hello <?php $uname=$_SESSION['uname']; echo $uname; ?>! </h2> 
+			<h3> Hello <?php $uname=$_SESSION['uname']; echo $uname; ?>! </h3> 
 			<button class="logout"><a href="logout.php"> LOGOUT </a></button>
 			<br>	
 		</div>
@@ -82,7 +82,8 @@
 
 				$cart_item=mysqli_query($conn, "SELECT * FROM Cake INNER JOIN Cart ON Cake.cid = Cart.cid WHERE uid=$uid");
 
-				$cart_id=array();
+				$cart_id[]=array();
+				$_SESSION['cart_id']=array();
 				
 				$qty_old=array();
 				$_SESSION['qty_old']=array();
@@ -97,10 +98,11 @@
 
 					$_SESSION['cid']=$cid;
 					$_SESSION['qty_old']=$qty_old;
+					$_SESSION['cart_id'][]=$cart_id;
 							
 					echo "<div class='container'>";
 
-					echo "<form name='[$cart_id][$cid]' class='update_form' action='user_cart_qty.php' method='POST'>";
+					echo "<form name='update_form' class='update_form' action='user_cart_qty.php' method='POST'>";
 						
 						echo "<div class='cancel'>Remove<input type='checkbox' name='cancel[$cart_id]'></div>";
 				

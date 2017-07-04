@@ -27,8 +27,8 @@ body {
 .logout {
 	cursor: pointer;
 	float: right;
-	padding: 8px 20px;
-	margin: 5px;
+	padding: 7px 15px;
+	/*margin: 5px;*/
 	font-weight: bold;
 	background-color: #6D9475;
 	border: none;
@@ -41,11 +41,11 @@ a .logout {
 }
 
 .bar {
-	margin-top: 17px;
+	margin-top: 12px;
 	width: 100%;
 }
 
-.bar ul {	
+.bar_content {	
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -53,15 +53,8 @@ a .logout {
 	background-color: #81D592;
 }
 
-.bar ul li {
+.home, .menu, .about, .contact, .cart, .account {
 	float: left;
-}
-
-.cart:hover {
-	color: orange;
-}
-
-.bar ul li a {
 	cursor: pointer;
 	width: 115px;
 	display: block;
@@ -72,11 +65,26 @@ a .logout {
 	font-weight: bold;
 }
 
-.bar ul li a:hover {
+.cart:hover {
+	color: orange;
+}
+
+/*.bar_content li a {
+	cursor: pointer;
+	width: 115px;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 15px 18px;
+	text-decoration: none;
+	font-weight: bold;
+}*/
+
+.bar_content li a:hover {
 	background-color: #6D9475;
 }
 
-.bar ul li a:active {
+.bar_content li a:active {
 	background-color: #4B8B58;
 }
 
@@ -129,7 +137,7 @@ a .logout {
 	/*position: relative;*/
 	/*display: block;*/
 	margin-left: 25px;
-	padding-top: 270px;
+	padding-top: 240px;
 	/*margin: 0 auto;*/
 	width: 50%;
 }
@@ -144,7 +152,7 @@ a .logout {
 	border-color: #4B8B58;
 	position: relative;
 	padding: 10px;
-	font-weight: bold;
+
 }
 
 .date {
@@ -168,3 +176,11 @@ a .logout {
 	display: inline-block;
 	padding: 15px; 
 }
+
+/*.acc {
+	display: none;
+}
+
+.account:hover ul{
+	display: block;
+}*/

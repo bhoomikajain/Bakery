@@ -10,6 +10,8 @@
 		$qty_new=array();
 		$qty_new=$_POST['qty_new'];
 
+		// print_r($qty_new);
+
 		foreach ($qty_new as $key => $value) {
 		
 			$change_query=mysqli_query($conn, "UPDATE Cart SET qty=$value WHERE cid=$key && uid=$uid");
@@ -24,7 +26,7 @@
 		$cancel=array();
 		$cancel=$_POST['cancel'];
 
-		print_r($_POST['cancel']);
+		// print_r($_POST['cancel']);
 
 		foreach ($cancel as $key => $value) {
 	

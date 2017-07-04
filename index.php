@@ -10,6 +10,8 @@
 
 <body>
 
+	<!-- <a href="#go_up"><div class="up"><h2> ^ </h2></div></a> -->
+
 	<div class="top">
 		
 		<div class="log">
@@ -25,6 +27,21 @@
 				<li><a class="contact" href="contact.php"> CONTACT </a></li>
 			</ul>
 		</div>
+
+	</div>
+
+	<div class="bottom">
+
+		<div class="container">
+			<!-- <div class="left"><b> < </b></div>
+			<div class="right"><b> > </b></div> -->
+			<div class="img_text">
+				<h1> Choose from our wide variety of eggless-cakes! </h1>
+				<a href="menu.php"><button class="shop"> SHOP NOW >> </button></a>
+			</div>
+		</div>
+
+		
 
 	</div>
 	

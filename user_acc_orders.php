@@ -19,13 +19,13 @@
 	<div class="top">
 		
 		<div class="log">
-			<h2> Hello <?php $uname=$_SESSION['uname']; echo $uname; ?>!</h2> 
+			<h3> Hello <?php $uname=$_SESSION['uname']; echo $uname; ?>!</h3> 
 			<a href="logout.php"><button class="logout"> LOGOUT </button></a>
 			<br>	
 		</div>
 		<!-- <div class="text">To place an order you must first sign in. </div> -->
 		<div class="bar">
-			<ul>
+			<ul class="bar_content">
 				<li><a class="home" href="user_index.php"> HOME </a></li>
 				<li><a class="menu" href="user_menu.php"> MENU </a></li>
 				<li><a class="about" href="user_about.php"> ABOUT </a></li>
@@ -38,7 +38,16 @@
 					echo $count_row;
 				?>
 				)</a></li>
-				<li><a class="account" href="user_account.php"> MY ACCOUNT </a></li>
+				<li><a class="account" href="user_account.php"> MY ACCOUNT </a>
+				<!-- <div class="acc">
+					<ul class="acc_content">
+						<li><a class="a_profile" href="user_account.php"> Profile </a></li>
+						<li><a class="a_address" href="user_acc_address.php"> Address </a></li>
+						<li><a class="a_orders" href="user_acc_orders.php"> My Orders </a></li>
+						<li><a class="a_password" href="user_acc_password.php"> Change Password </a></li>
+					</ul>
+				</div> -->
+				</li>
 			</ul>
 		</div>
 
@@ -66,13 +75,14 @@
 
 			while(($ordered_item_row=mysqli_fetch_assoc($ordered_item)) && ($order_row=mysqli_fetch_assoc($order_query))) {
 				echo "<div class='container'>";
-					echo "<span class='orderid'>Order ID: " . $order_row['order_id'] . "</span>";
-					echo "<span class='date'>Date: " . $order_row['DATE(order_date)'] . "</span>";
+					echo "<span class='orderid'><b>Order ID: " . $order_row['order_id'] . "</b></span>";
+					echo "<span class='date'><b>Date: " . $order_row['DATE(order_date)'] . "</b></span>";
 					echo "<img src='" . $ordered_item_row['image_name'] . "' class='cakeimage'>";
 					echo "<div class='cdetails'>";
-						echo "<span class='cname'>" . $ordered_item_row['name'] . "</span><br><br>";
+						echo "<span class='cname'><b>" . $ordered_item_row['name'] . "</b></span><br><br>";
 						echo "<span class='qty'>Quantity: " . $ordered_item_row['qty'] . "</span><br><br>";
-						echo "<span class='price'>Price: Rs." . $ordered_item_row['price'] . "</span><br><br>";
+						echo "<span class='weight'>" . $ordered_item_row['weight'] . " lbs</span><br><br>";
+						echo "<span class='price'>Rs." . $ordered_item_row['price'] . "</span><br><br>";
 					echo "</div>";
 				echo "</div>";
 			}

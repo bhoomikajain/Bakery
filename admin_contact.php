@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title> ONLINE BAKERY </title>
-	<link rel="stylesheet" href="admin_bakery.css">
+	<link rel="stylesheet" href="admin_bakery_contact.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="jquery-3.2.1.min.js"></script>
 	<script src="jquery.validate.js"></script>
@@ -29,24 +29,12 @@
 
 	</div>
 
-	<!-- <div class="bottom">
-		
-		<form name="upload" id="upload" method="POST" enctype="multipart/form-data" action="admin_index_upload.php">
-			<table cellpadding="10px" cellspacing="10px">
-				<tr>
-					<td> Select image to upload </td>
-					<td> <input type="file" name="image" id="image"> </td>
-				</tr>
-			</table>
-			<input type="submit" class="submit_upload" value="UPLOAD">
-		</form>
-
-	</div> -->
-
 	<div class="bottom">
-		<h2>Welcome, Admin!</h2>
-		To add, edit, delete cakes from the menu, 
-		<a href="admin_menu.php"><button class="click_here">CLICK HERE</button></a>
+		<div class="contact_details">
+			<h2> Contact Us </h2>
+			Call us: +91 7506646812 <br>
+			Email us: bhoomika.luhadiya@gmail.com
+		</div>
 	</div>
 	
 </body>

@@ -6,46 +6,37 @@ body {
 .top {
 	width: 100%;
 	position: fixed;
-}
-
-.text {
-	font-size: 10px;
-	text-align: right;
-	margin-top: 3px;
-	margin-right: 20px;
-	font-weight: bold;
+	background-color: white;
 }
 
 .log {
 	overflow: auto;
-	text-align: right;
 	margin-right: 20px;
+	text-align: right;
 }
 
-.signin {
+.logout {
 	cursor: pointer;
 	float: right;
-	padding: 8px 20px;
-	margin: 5px;
+	padding: 7px 15px;
+	/*margin: 5px;*/
 	font-weight: bold;
 	background-color: #6D9475;
 	border: none;
 	border-radius: 4px;
-	
 }
 
-.signin a {
+.logout a {
 	text-decoration: none;
 	color: white;
 }
 
 .bar {
-	margin-top: 17px;
+	margin-top: 12px;
 	width: 100%;
 }
 
-ul {
-	cursor: pointer;	
+ul {	
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -58,6 +49,7 @@ li {
 }
 
 li a {
+	cursor: pointer;
 	width: 115px;
 	display: block;
 	color: white;
@@ -75,6 +67,10 @@ li a:active {
 	background-color: #4B8B58;
 }
 
+.cart:hover {
+	color: orange;
+}
+
 .about {
 	background-color: #4B8B58;
 }
@@ -82,7 +78,7 @@ li a:active {
 .bottom {
 	/*font-weight: bold;*/
 	/*text-align: center; */
-	padding-top: 125px;
+	padding-top: 20px;
 	margin: 0 auto;
 	width: 1200px;
 	font-size: 20px;

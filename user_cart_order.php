@@ -2,6 +2,9 @@
 	include "cake_sql.php";
 	session_start();
 
+	$cart_id=array();
+
+
 	$uid=$_SESSION['uid'];
 	$cart_id=$_SESSION['cart_id'];
 
